@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<!--
+    A webiste to manage the database of a library website
+-->
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/noscript.css') }}" />
+    </head>
+    <body class="is-preload">
+        <!-- Sidebar -->
+			<section id="sidebar">
+				<div class="inner">
+					<nav>
+						<ul>
+                            <h2> InkWell Library </h2>
+							<li><a href="{{ url_for('intro') }}">Welcome</a></li>
+							<li><a href="{{ url_for('books') }}">Book</a></li>
+							<li><a href="{{ url_for('orders') }}">Order</a></li>
+							<li><a href="{{ url_for('members') }}">Member</a></li>
+                            <li><a href="{{ url_for('suppliers') }}">Suplier</a></li>
+						</ul>
+					</nav>
+				</div>
+			</section>
+
+        <!--wrapper -->
+            <div id="wrapper">
+
+                
+                {% block intro %}{% endblock %}
+
+
+                
+                    <div class="home-btn-group">
+                        {% block add_link %}{% endblock %}
+                        {% block search %}{% endblock %}  
+                    </div>
+                   
+                    {% block filter %}{% endblock %}
+                
+                <div class="container2">
+                    {% block content %}{% endblock %}
+                    
+                </div>
+
+                <div class="container">
+                    {% for category, message in get_flashed_messages(with_categories=true) %}
+                        <div class="{{ category }}">{{ message }}</div>
+                    {% endfor %}
+                    
+                                     
+                </div>
+            </div>    
+
+        <!-- Footer -->
+			<footer id="footer" class="wrapper style1-alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>CSC-310 Project</li><li>Made by Stephanie & Million</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+            <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+    </body>
+</html>

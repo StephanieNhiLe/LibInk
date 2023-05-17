@@ -1,0 +1,15 @@
+<!-- Intro -->
+{% extends 'base.html' %}
+
+{% block intro %}
+<section id="intro" class="wrapper style1 fullscreen fade-up">
+    <div class="inner">
+        <h1>InkWell Library</h1>
+        <p> Welcome to InkWell Library, a place where reading and writing come together. <br> 
+            Our library is a haven for book lovers, where you can explore a vast collection of literature and find inspiration for your own writing. </p>
+        <ul class="actions">
+            <li><a href="{{ url_for('books') }}" class="button scrolly">Learn more</a></li>
+        </ul>
+    </div>
+</section>
+{% endblock %}
