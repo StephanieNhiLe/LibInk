@@ -19,7 +19,7 @@
 				<div class="inner">
 					<nav>
 						<ul>
-                            <h2> InkWell Library </h2>
+                            <h2> Library Management Web </h2>
 							<li><a href="{{ url_for('intro') }}">Welcome</a></li>
 							<li><a href="{{ url_for('books') }}">Book</a></li>
 							<li><a href="{{ url_for('orders') }}">Order</a></li>
@@ -45,7 +45,7 @@
                    
                     {% block filter %}{% endblock %}
                 
-                <div class="container2">
+                <div class="container2" style="padding-bottom: 48px">
                     {% block content %}{% endblock %}
                     
                 </div>

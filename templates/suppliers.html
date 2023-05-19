@@ -40,7 +40,8 @@
                     <td>
                       <a href="{{ url_for('editSupplier', id=supplier.id) }}" class="edit"><i class="fas fa-edit"></i></a>     
                       <form action="{{ url_for('deleteSupplier', id=supplier.id) }}" method="POST" class="deleteForm">
-                <button class ="delete" onclick="return confirm('Are you sure you want to delete this Supplier?')"><i class="fa-solid fa-trash"></i></button></form>
+                <button class ="delete abc" onclick="return confirm('Are you sure you want to delete this Supplier?')" style="margin: 0 -0.5em"><i class="fa-solid fa-trash"></i></button>
+                </form>
                     </td>
                 </tr>
             {% endfor %}
